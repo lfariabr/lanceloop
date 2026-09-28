@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1014" />
+    <title>LanceLoop — catch the moment</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script src="/static/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="LanceLoop home">
+          <span class="brand-mark" aria-hidden="true">↺</span>
+          <span>LANCE<span class="brand-accent">LOOP</span></span>
+        </a>
+        <span class="prototype-label">LOCAL PROTOTYPE <strong>V2</strong></span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">THE MOMENT IS ALREADY THERE</p>
+          <h1 id="page-title">Catch the play.<br /><em>Keep the moment.</em></h1>
+          <p class="intro-copy">Your camera keeps the last 15 seconds ready. Press save after the play, and the replay is yours.</p>
+        </section>
+
+        <section class="workspace" aria-label="Replay workspace">
+          <div class="video-card">
+            <div class="video-header">
+              <span class="live-tag"><span class="live-dot"></span> LIVE CAMERA</span>
+              <span id="camera-status" class="camera-status">Connecting…</span>
+            </div>
+            <div class="video-frame">
+              <img id="live-feed" src="/live" alt="Live camera feed" />
+              <div class="frame-corner top-left"></div>
+              <div class="frame-corner top-right"></div>
+              <div class="frame-corner bottom-left"></div>
+              <div class="frame-corner bottom-right"></div>
+              <span class="frame-caption">COURT VIEW / LIVE</span>
+            </div>
+            <div class="video-footer"><span>1280 × 720 preview</span><span>LOCAL STREAM</span></div>
+          </div>
+
+          <aside class="control-card" aria-label="Replay controls">
+            <div>
+              <div class="section-heading"><span class="step-number">01</span><span>REPLAY CONTROL</span></div>
+              <h2>That just happened?</h2>
+              <p class="control-copy">The last 15 seconds are waiting. Save the play before it becomes a story.</p>
+            </div>
+
+            <div class="buffer-panel">
+              <div class="buffer-topline"><span>REPLAY BUFFER</span><strong id="buffer-label">0.0 / 15s</strong></div>
+              <div id="buffer-progress" class="buffer-track" role="progressbar" aria-label="Replay buffer" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"><div id="buffer-fill"></div></div>
+              <p id="buffer-note" class="buffer-note">Connecting to camera…</p>
+            </div>
+
+            <button id="save-button" class="save-button" type="button" disabled>
+              <span class="save-icon" aria-hidden="true">↺</span>
+              <span>SAVE LAST 15 SECONDS</span>
+              <span class="save-arrow" aria-hidden="true">↗</span>
+            </button>
+            <p id="action-message" class="action-message" role="status" aria-live="polite"></p>
+
+            <div class="recent-section">
+              <div class="section-heading"><span class="step-number">02</span><span>SAVED THIS SESSION</span></div>
+              <ul id="replay-list" class="replay-list">
+                <li class="empty-state">Saved replays will appear here.</li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+
+        <section class="how-it-works" aria-label="How it works">
+          <div><span>01 / CAPTURE</span><p>Camera sends a continuous local feed.</p></div>
+          <div><span>02 / BUFFER</span><p>Only the most recent 15 seconds stay in memory.</p></div>
+          <div><span>03 / SAVE</span><p>One click turns the moment into an MP4.</p></div>
+        </section>
+      </main>
+
+      <footer><span>LANCELOOP / PROTOTYPE</span><span>RUNNING ON THIS COMPUTER · NO UPLOAD</span></footer>
+    </div>
+  </body>
+</html>
